@@ -6,10 +6,11 @@ plt = platform.system()
 if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
 #title
-st.title("Hayvonlarni klassifikatsiya qiluvchi model")
+st.title("Hayvonot olamini klassifikatsiya qiluvchi model")
+st.markdown("This model is not for domestic animals. Furthermore, 'Mammal' class means only human.")
 
 #Rasm joylash
-file = st.file_uploader("Rasm yuklash", type=['png','jpg','gif','svg'])
+file = st.file_uploader("Load image", type=['png','jpg','gif','svg'])
 
 if file:
     st.image(file)
