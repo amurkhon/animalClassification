@@ -5,6 +5,8 @@ import pathlib
 plt = platform.system()
 if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
+files = []
+
 #title
 st.title("Fauna Classification Model")
 st.markdown("This model is not for domestic animals. Furthermore, 'Mammal' class means only human.")
@@ -29,3 +31,7 @@ if file:
     #plotting
     fig = px.bar(x=probs*100, y=model.dls.vocab)
     st.plotly_chart(fig)
+while file:
+    files.append(file)
+with st.sidebar:
+ st.radio('Select one:', [file for file in files])
