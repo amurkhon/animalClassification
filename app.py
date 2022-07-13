@@ -2,8 +2,8 @@ from fastai.vision.all import *
 import streamlit as st
 import plotly.express as px
 import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+plt = platform.system()
+if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
 #title
 st.title("Hayvonlarni klassifikatsiya qiluvchi model")
