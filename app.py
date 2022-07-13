@@ -10,7 +10,7 @@ st.title("Fauna Classification Model")
 st.markdown("This model is not for domestic animals. Furthermore, 'Mammal' class means only human.")
 
 #Rasm joylash
-file = st.file_uploader("Load image", type=['png','jpg','gif','svg']) or st.camera_input("Take a picture")
+file = st.file_uploader("Load image", type=['png','jpg','gif','svg']) or st.camera_input("If you want to use a camera, You can take a picture!")
 
 if file:
     st.image(file)
