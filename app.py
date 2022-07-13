@@ -5,10 +5,12 @@ import pathlib
 plt = platform.system()
 if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
-with st.form(key='my_form'):
-    username = st.text_input('Username')
-    password = st.text_input('Password')
-    st.form_submit_button('Login')
+if st.user.email == 'jane@email.com':
+  display_jane_content()
+elif st.user.email == 'adam@foocorp.io':
+  display_adam_content()
+else:
+  st.write("Please contact us to get access!")
 
 #title
 st.title("Fauna Classification Model")
