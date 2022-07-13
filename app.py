@@ -31,7 +31,7 @@ if file:
     #plotting
     fig = px.bar(x=probs*100, y=model.dls.vocab)
     st.plotly_chart(fig)
-while file:
+while True:
     files.append(file)
 with st.sidebar:
  st.radio('Select one:', [file for file in files])
