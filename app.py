@@ -7,7 +7,7 @@ if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
 #title
 st.title("Fauna Classification Model")
-st.markdown("This model is not for domestic animals. Furthermore, 'Mammal' class means only human.")
+st.markdown("This model is not for domestic animals. Furthermore, 'Mammal' class means only human.") or st.camera_input("If you want to use camera, you can take a picture!")
 
 #Rasm joylash
 file = st.file_uploader("Load image", type=['png','jpg','gif','svg'])
