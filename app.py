@@ -5,19 +5,12 @@ import pathlib
 plt = platform.system()
 if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
-if st.user.email == 'jane@email.com':
-  display_jane_content()
-elif st.user.email == 'adam@foocorp.io':
-  display_adam_content()
-else:
-  st.write("Please contact us to get access!")
-
 #title
 st.title("Fauna Classification Model")
 st.markdown("This model is not for domestic animals. Furthermore, 'Mammal' class means only human.")
 
 #Rasm joylash
-file = st.file_uploader("Load image", type=['png','jpg','gif','svg'])
+file = st.file_uploader("Load image", type=['png','jpg','gif','svg']) or st.camera_input("Take a picture", type=['png','jpg','gif','svg'])
 
 if file:
     st.image(file)
