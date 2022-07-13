@@ -5,8 +5,13 @@ import pathlib
 plt = platform.system()
 if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
+     with st.form(key='my_form'):
+     username = st.text_input('Username')
+     password = st.text_input('Password')
+     st.form_submit_button('Login')
+
 #title
-st.title("Hayvonot olamini klassifikatsiya qiluvchi model")
+st.title("Fauna Classification Model")
 st.markdown("This model is not for domestic animals. Furthermore, 'Mammal' class means only human.")
 
 #Rasm joylash
@@ -23,8 +28,8 @@ if file:
 
     #prediction
     pred, pred_id, probs = model.predict(img)
-    st.success(f"Bashorat: {pred}")
-    st.info(f"Ehtimollik: {probs[pred_id]*100:.1f}%")
+    st.success(f"Prediction: {pred}")
+    st.info(f"Probability: {probs[pred_id]*100:.1f}%")
 
     #plotting
     fig = px.bar(x=probs*100, y=model.dls.vocab)
